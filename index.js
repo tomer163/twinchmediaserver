@@ -1,3 +1,5 @@
+import 'dotenv/config'
+
 import NodeMediaServer from "node-media-server";
 import ffmpeg from "fluent-ffmpeg";
 import { path } from '@ffmpeg-installer/ffmpeg'
@@ -26,7 +28,7 @@ nms.run()
 nms.on('prePublish', async(id, StreamPath, args) => {
     let session = nms.getSession(id)
     try{
-        const res = await axios.get(`http://localhost:3000/streamToUser/${StreamPath.split('/')[2]}`)
+        const res = await axios.get(`${process.env.BACKEND_URL}/streamToUser/${StreamPath.split('/')[2]}`)
         console.log(`rtmp://localhost:1935${StreamPath}`)
         ffmpeg(`rtmp://localhost:1935${StreamPath}`)
         .addOptions([
