@@ -1,0 +1,19 @@
+{
+  "name": "twinchmediaserver",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "axios": "^1.6.2",
+    "fluent-ffmpeg": "^2.1.2",
+    "node-media-server": "^2.6.2"
+  }
+}
